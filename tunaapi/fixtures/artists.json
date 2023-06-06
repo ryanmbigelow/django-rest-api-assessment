@@ -1,0 +1,20 @@
+[
+  {
+      "model": "tunaapi.artist",
+      "pk": 1,
+      "fields": {
+          "name": "Linda Smith",
+          "age": 35,
+          "bio": "A lo-fi artist from New York in the 80s and 90s."
+      }
+  },
+  {
+    "model": "tunaapi.artist",
+    "pk": 2,
+    "fields": {
+        "name": "Electrelane",
+        "age": 30,
+        "bio": "An English Indie Rock band from the late 90s and 00s."
+    }
+  }
+]
