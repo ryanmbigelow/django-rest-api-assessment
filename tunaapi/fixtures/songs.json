@@ -1,0 +1,22 @@
+[
+  {
+      "model": "tunaapi.song",
+      "pk": 1,
+      "fields": {
+          "title": "I See Your Face",
+          "artist_id": 1,
+          "album": "'Till Another Time'",
+          "length": 180
+      }
+  },
+  {
+    "model": "tunaapi.song",
+    "pk": 2,
+    "fields": {
+        "title": "Enter Laughing",
+        "artist_id": 2,
+        "album": "The Power Out",
+        "length": 210
+    }
+  }
+]

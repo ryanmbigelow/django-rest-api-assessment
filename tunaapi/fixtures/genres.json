@@ -1,0 +1,16 @@
+[
+  {
+      "model": "tunaapi.genre",
+      "pk": 1,
+      "fields": {
+          "description": "Low-fi"
+      }
+  },
+  {
+    "model": "tunaapi.genre",
+    "pk": 2,
+    "fields": {
+        "description": "Indie Rock"
+    }
+  }
+]
