@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from tunaapi.models import Genre
 
-class GenreTypeView(ViewSet):
+class GenreView(ViewSet):
 
     def retrieve(self, request, pk):
         genre = Genre.objects.get(pk=pk)
@@ -24,3 +24,19 @@ class GenreTypeView(ViewSet):
         return Response(serializer.data)
         
     def update(self, request, pk):
+        genre = Genre.objects.get(pk=pk)
+        genre.description = request.data["description"]
+        genre.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+      
+    def destroy(self, request, pk):
+        genre = Genre.objects.get(pk=pk)
+        genre.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+
+class GenreSerializer(serializers.ModelSerializer):
+  
+    class Meta:
+        model = Genre
+        fields = ('id', 'description')
