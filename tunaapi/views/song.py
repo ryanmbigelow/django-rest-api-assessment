@@ -17,10 +17,10 @@ class SongView(ViewSet):
         return Response(serializer.data)
       
     def create(self, request):
-        artist = Artist.objects.get(pk=request.data["artist"])
+        artist_id = Artist.objects.get(pk=request.data["artist_id"])
         song = Song.objects.create(
             title=request.data["title"],
-            artist_id=artist,
+            artist_id=artist_id,
             album=request.data["album"],
             length=request.data["length"],
         )
@@ -30,10 +30,10 @@ class SongView(ViewSet):
     def update(self, request, pk):
         song = Song.objects.get(pk=pk)
         song.title = request.data["title"]
-        artist = Artist.objects.get(pk=request.data["artist"])
-        song.artist_id = artist
+        artist_id = Artist.objects.get(pk=request.data["artist_id"])
+        song.artist_id = artist_id
         song.album = request.data["album"]
-        song.time = request.data["time"]
+        song.length = request.data["length"]
         song.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
       
@@ -47,5 +47,5 @@ class SongSerializer(serializers.ModelSerializer):
   
     class Meta:
         model = Song
-        fields = ('id', 'title', 'artist_id', 'album', 'time')
+        fields = ('id', 'title', 'artist_id', 'album', 'length')
         depth = 1
