@@ -1,0 +1,26 @@
+[
+  {
+      "model": "tunaapi.songgenre",
+      "pk": 1,
+      "fields": {
+          "song": 1,
+          "genre": 1
+      }
+  },
+  {
+    "model": "tunaapi.songgenre",
+    "pk": 2,
+    "fields": {
+      "song": 2,
+      "genre": 2
+    }
+  },
+  {
+    "model": "tunaapi.songgenre",
+    "pk": 2,
+    "fields": {
+      "song": 4,
+      "genre": 1
+    }
+  }
+]
