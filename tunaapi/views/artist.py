@@ -1,9 +1,9 @@
 from django.http import HttpResponseServerError
+from django.db.models import Count
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from django.db.models import Count
-from tunaapi.models import Artist, Song
+from tunaapi.models import Artist
 
 class ArtistView(ViewSet):
 
@@ -45,4 +45,4 @@ class ArtistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artist
         fields = ('id', 'name', 'age', 'bio', 'song_count', 'songs')
-        depth = 2
+        depth = 1
